@@ -13,6 +13,22 @@ document.addEventListener('DOMContentLoaded', () => {
         i++ 
     }
     img_count = i+2;
+
+    for (const info of track.getElementsByClassName("info")) {
+        const index = info.dataset.index;
+        console.log("nextpercentage: " + nextPercentage);
+        if (index * (-100 / img_count) >= nextPercentage && nextPercentage > (index + 1) * (-100 / img_count)) {
+            info.animate({
+                transform: `translate(0%,0%)`
+            }, {duration: 1, fill: "forwards" });
+        }
+        else{
+            info.animate({
+                transform: `translate(0%,60%)`
+            }, {duration: 1, fill: "forwards" });
+        }
+    }
+
 })
 
 
@@ -45,18 +61,15 @@ window.onmousemove = e => {
 
     for (const info of track.getElementsByClassName("info")) {
         const index = info.dataset.index;
-        console.log("nextpercentage: " + nextPercentage);
         if (index * (-100 / img_count) >= nextPercentage && nextPercentage > (index + 1) * (-100 / img_count)) {
             info.animate({
                 transform: `translate(0%,0%)`
             }, {duration: 1200, fill: "forwards" });
-            console.log("index true: " + index);
         }
         else{
             info.animate({
                 transform: `translate(0%,60%)`
             }, {duration: 1200, fill: "forwards" });
-            console.log("index false: " + index);
         }
     }
 
