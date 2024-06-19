@@ -34,5 +34,6 @@ body {
     font-size: 100px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: bold;
-    height: 20vmin;
+    height: 30vmin;
+    width: 14vmin; 
 }
