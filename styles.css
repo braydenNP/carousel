@@ -7,20 +7,25 @@ body {
     margin: 0rem;
     overflow: hidden;
 } 
-#image-track > .image {
-    width: 55vmin;
+#image-track > div {
+    height: 60vmin;
+}
+#image-track > div > .image {
+    width: 40vmin;
     height: 56vmin;
     object-fit: cover;
-    object-position: center;
+    object-position: center center;
     user-select: none;
+    transform: translateX(-50%);
+    transition: width 0.4s ease-in-out;
 
 }
+
 #image-track {
     display: flex;
     gap: 4vmin;
     position: absolute;
-    left: 50%;
-    top: 50%; transform: translate(0%, -50%);
+    left: 50%; top: 50%; transform: translate(0%, -50%);
 }
 .info-box {
     position: absolute;
@@ -34,6 +39,36 @@ body {
     font-size: 100px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: bold;
-    height: 30vmin;
-    width: 14vmin; 
+    height: 14vmin;
+    width: 18vmin; 
+}
+.progress-bar{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    background-color: white;
+    padding: 10px;
+    z-index: 10;
+    height: 0.5vmin;
+    width: 0px; 
+}
+.title{
+    left: 50%;
+    color: white;
+    font-size: 100px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    height: 14vmin;
+    width: 40vmin; 
+    transform: translate(-50%,50%);
+}
+.date{
+    left: 50%;
+    color: white;
+    font-size: 50px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    height: 14vmin;
+    width: 40vmin; 
+    transform: translate(-50%, 0);
 }
