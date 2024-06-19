@@ -1,3 +1,1 @@
-# braydenNP.github.io
-
-$My Websitecd my$
+my personal website 
