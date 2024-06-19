@@ -55,7 +55,7 @@ body {
 .title{
     left: 50%;
     color: white;
-    font-size: 100px;
+    font-size: 3.4vmin;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: bold;
     height: 14vmin;
@@ -65,7 +65,7 @@ body {
 .date{
     left: 50%;
     color: white;
-    font-size: 50px;
+    font-size: 1.8vmin;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: bold;
     height: 14vmin;
