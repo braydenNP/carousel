@@ -60,11 +60,13 @@ window.onmousemove = e => {
         const index = info.dataset.index;
         if (index * (-100 / img_count) >= nextPercentage && nextPercentage > (index + 1) * (-100 / img_count)) {
             info.animate({
-                transform: `translate(0%,0%)`
+                transform: `translate(0%,0%)`,
+                opacity: 100
             }, {duration: 1200, fill: "forwards" });
         }
         else{
             info.animate({
+                opacity: 0,
                 transform: `translate(0%,60%)`
             }, {duration: 1200, fill: "forwards" });
         }
