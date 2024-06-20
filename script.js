@@ -58,7 +58,7 @@ window.onmousemove = e => {
 
     for (const info of track.getElementsByClassName("info")) {
         const index = info.dataset.index;
-        if (index * (-100 / img_count) >= nextPercentage && nextPercentage > (index + 1) * (-100 / img_count)) {
+        if (index * (-100 / (img_count-2)) >= nextPercentage && nextPercentage > (index + 1) * (-100 / (img_count-2))) {
             info.animate({
                 transform: `translate(0%,0%)`,
                 opacity: 100
