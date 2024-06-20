@@ -4,7 +4,7 @@ const infoBox = document.getElementById("info-box");
 const progressBar = document.getElementById("progress-bar");
 const info = document.getElementById("info");
 
-const img_count = 9;
+let img_count = 9;
 
 document.addEventListener('DOMContentLoaded', () => {
     var i = 0;
@@ -12,21 +12,16 @@ document.addEventListener('DOMContentLoaded', () => {
         info.dataset.index = i;
         i++ 
     }
-    img_count = i+2;
+    img_count = i+2; //includes empty image
 
+    var i = 0;
+    for(const image of track.getElementsByClassName("image")) {
+        image.dataset.index = i;
+        i++
+    }
+    
     for (const info of track.getElementsByClassName("info")) {
-        const index = info.dataset.index;
-        console.log("nextpercentage: " + nextPercentage);
-        if (index * (-100 / img_count) >= nextPercentage && nextPercentage > (index + 1) * (-100 / img_count)) {
-            info.animate({
-                transform: `translate(0%,0%)`
-            }, {duration: 1, fill: "forwards" });
-        }
-        else{
-            info.animate({
-                transform: `translate(0%,60%)`
-            }, {duration: 1, fill: "forwards" });
-        }
+        info.style.transform = `translate(0%,60%)`
     }
 
 })
@@ -51,11 +46,13 @@ window.onmousemove = e => {
     }, {duration: 1200, fill: "forwards"});
 
     for(const image of track.getElementsByClassName("image")) {
-        const rect = image.getBoundingClientRect();
+        /*const rect = image.getBoundingClientRect();
         const distanceFromLeft = rect.left;
-        const viewportWidth = window.innerWidth;
+        const viewportWidth = window.innerWidth; */
+        const mid = nextPercentage-((-100/img_count)*image.dataset.index);
+        console.log("index: " + image.dataset.index + "mid: " + mid);
         image.animate({
-            objectPosition: `${100 * (distanceFromLeft/viewportWidth)}% center`
+            objectPosition: `${(mid+50)}% center`
         }, { duration: 1200, fill: "forwards" });
     }
 
