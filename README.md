@@ -1,1 +1,1 @@
-https://braydennp.github.io/carousell/
+https://braydennp.github.io/carousel/
